@@ -1,0 +1,239 @@
+*h1 {
+    font-size: 70px;
+    line-height: 100px;
+    color: #FFFFFF;
+}
+
+hr {
+    position: relative;
+    color: #FFFFFF;
+    width: 95%;
+    height: 2px;
+    margin: auto;
+}
+
+// [Main Space]
+.main-space {
+
+    // Intro Title
+    .intro-title {
+        margin-top: 6rem;
+
+        p {
+            font-size: 36px;
+            background: linear-gradient(89.95deg, #1A94AF 0.01%, #2F3285 99.93%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        button {
+            background: linear-gradient(264.63deg, #2F3285 13.41%, #1A94AF 87.04%);
+            border-radius: 10px;
+            width: 200px;
+            border: 1px solid transparent;
+            transition: all 0.5s;
+
+            span {
+                font-weight: 400;
+                font-size: 24px;
+                color: #FFFFFF;
+            }
+        }
+
+        button:hover {
+            border: 1px solid #fff;
+        }
+    }
+
+    // Top Games
+    .top-games {
+        .card {
+            position: relative;
+            width: 470px;
+            height: 230px;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+
+            .gameTitle {
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                opacity: 0;
+                transition: .8s;
+                background: #0000006d;
+                border-radius: 10px;
+            }
+
+            img {
+                border: none;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 15px;
+            }
+        }
+    }
+
+    // Animation
+    .top-games .card:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 170%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        z-index: 1;
+        transform: skewX(45deg);
+        transition: .8s;
+    }
+
+    .top-games .card:hover:before {
+        transition-delay: .5s;
+        left: -170%;
+    }
+
+    .top-games .card:hover .gameTitle {
+        transition-delay: .5s;
+        opacity: 1;
+    }
+
+
+}
+
+// [Feedback Space]
+.feedback-space {
+    .feedback-cards .card {
+        margin-top: 15rem;
+        width: 470px;
+        height: 230px;
+        border: 0;
+        cursor: pointer;
+        background: rgba(78, 78, 78, 0.2);
+        border-radius: 12.5px;
+
+        .profile {
+            .avatar {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+
+                img {
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        // Rating (Force font-size by using ::ng-deep)
+        .container-stars {
+            ::ng-deep label.star {
+                font-size: 20px !important;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+// [Video Space]
+.video-space {
+    position: relative;
+
+    h1 {
+        position: absolute;
+        top: 1em;
+        left: 0;
+        z-index: 999;
+    }
+
+    img.backgroundCover {
+        position: relative;
+        height: 1180px;
+        z-index: 1;
+    }
+
+    .video-card {
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 155px;
+        width: 990px;
+        height: 310px;
+        z-index: 999;
+
+        .preview {
+            position: relative;
+            width: 530px;
+
+            img {
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .bi-play-circle {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                color: #fff;
+            }
+        }
+
+        .infos {
+            width: 460px;
+
+            h3 {
+                font-size: 35px;
+                color: #fff;
+
+                span {
+                    font-size: 35px;
+                    color: #1A94AF;
+                }
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 20px;
+                color: #fff;
+            }
+
+            ul li {
+                list-style: none;
+                cursor: pointer;
+
+                i {
+                    color: #1A94AF;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+
+// [Contact Space]
+.contact-space {
+
+    input,
+    textarea {
+        background: #171111;
+        border: 2px solid #1A94AF;
+        color: #fff;
+    }
+
+    button {
+        background: linear-gradient(265.32deg, #2F3285 3.17%, #1A94AF 100%);
+        border-radius: 15px;
+    }
+}

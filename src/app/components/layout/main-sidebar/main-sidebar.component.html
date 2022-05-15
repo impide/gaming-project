@@ -1,0 +1,22 @@
+<!-- Main Sidebar -->
+<div class="main-sidebar bg-dark min-vh-100 d-flex flex-column justify-content-between">
+    <!-- Logo -->
+    <div class="logo d-flex justify-content-center">
+        <img src="../../../../assets/images/sidebar/Controller.svg" alt="Controller">
+    </div>
+    <!-- Main Icons -->
+    <div class="main-icons d-flex flex-column align-items-center">
+        <div class="icon-section d-flex flex-column align-items-center">
+            <div class="icons mb-4" *ngFor="let icon of iconsSidebar">
+                <img [src]="icon.pathImage" alt="icon.iconTitle">
+            </div>
+        </div>
+    </div>
+    <!-- Other Icons -->
+    <div class="other-icons d-flex flex-column align-items-center pb-3">
+        <div class="icons mb-4" *ngFor="let other of otherIconsSidebar">
+            <img [src]="other.pathImage" alt="other.iconTitle">
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,57 @@
+// Main Navbar
+.main-navbar {
+    // Brand
+    .brand {
+        p {
+            font-size: 64px;
+            line-height: 108px;
+        }
+    }
+
+    // Search Bar
+    .search-bar {
+        position: relative;
+        z-index: 9;
+
+        .bi-search {
+            position: absolute;
+            top: 5.5px;
+            left: 10px;
+            z-index: 10;
+            color: #868686;
+        }
+        input {
+            position: relative;
+            background-color: #233444;
+            border: none;
+        }
+
+        ::placeholder {
+            font-size: 20px;
+            line-height: 34px;
+            color: #868686;
+        }
+    }
+
+    // Profile
+    .profile {
+        // Notification
+        .notification {
+            cursor: pointer;
+        }
+
+        // Avatar
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+
+            img {
+                object-fit: cover;
+                object-position: center;
+                border-radius: 50%;
+            }
+        }
+    }
+}

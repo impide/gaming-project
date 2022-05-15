@@ -1,0 +1,127 @@
+<!-- [Main Space] -->
+<div class="main-space d-flex flex-column justify-content-between px-3">
+    <!-- Intro Title -->
+    <div class="d-flex">
+        <div class="intro-title col-5">
+            <p class="m-0">give your feedback</p>
+            <h1>Top lists Games of the Month</h1>
+            <button class="btn ">
+                <span>View More</span>
+            </button>
+        </div>
+        <!-- Controller -->
+        <div class="img-controller d-flex justify-content-end col-7">
+            <img src="../../../assets/images/main-space/Controller.svg" alt="Controller">
+        </div>
+    </div>
+    <!-- Top Games -->
+    <div class="top-games d-flex my-5">
+        <div class="card mx-2" routerLink="main-games" *ngFor="let game of games">
+            <h3 class="gameTitle text-white p-2">{{game.gameTitle}}</h3>
+            <img class="w-100 h-100" [src]="game.pathImages" alt="Cover">
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- [Feedback Space] -->
+<div class="feedback-space px-3">
+    <h1 class="text-white text-end">Choose your favorite devices<br> and let your feedback</h1>
+    <div class="devices">
+        <img src="../../../assets/images/main-space/Devices.png" alt="Devices">
+    </div>
+    <!-- Feedback Cards -->
+    <div class="feedback-cards d-flex mb-5">
+        <div class="card mx-2 d-flex flex-column align-items-center" *ngFor="let feed of feedbacks">
+            <!-- User Profile & Pseudo -->
+            <div class="profile mt-3">
+                <div class="avatar m-auto">
+                    <img [src]="feed.avatar" class="w-100 h-100" src="" alt="Avatar">
+                </div>
+                <div class="pseudo">
+                    <p class="text-white text-center mb-0">{{feed.pseudo}}</p>
+                </div>
+            </div>
+            <hr>
+            <!-- Stars (Rating) & Feed Content -->
+            <div class="container-stars w-100 d-flex justify-content-between align-items-center px-3">
+                <p class="text-white m-0">{{feed.gameTitle}}</p>
+                <ngx-star-rating [(ngModel)]="feed.rating" class="rating-stars" [id]="'rating3'" [disabled]="true">
+                </ngx-star-rating>
+            </div>
+            <p class="text-white px-3">{{feed.feedback}}</p>
+        </div>
+    </div>
+</div>
+<hr class="mb-5">
+
+<!-- [Video Space] -->
+<div class="video-space">
+    <h1 class="ps-3">Lorem ipsum dolor sit<br> amet, consectetur<br> adipiscing elit ut<br> aliquam</h1>
+    <img class="backgroundCover" src="../../../assets/images/main-space/VideoBackground.png" alt="Background">
+    <!-- Video Card -->
+    <div class="video-card d-flex">
+        <div class="preview h-100">
+            <img class="w-100 h-100" src="../../../assets/images/main-space/PreviewImage.svg" alt="Preview">
+            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor"
+                class="bi bi-play-circle h-100" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path
+                    d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z" />
+            </svg>
+        </div>
+        <div class="infos h-100 bg-dark p-4">
+            <h3>Lorem <span>Ipsum</span> Ticaboum</h3>
+            <p class="mt-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus
+                venenatis,
+                lectus magna fringilla urna, porttitor</p>
+            <ul class="d-flex px-0 mt-5">
+                <li class="me-3" *ngFor="let social of mediaSocials">
+                    <i class="bi {{social.socialClass}}"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- [Contacte] -->
+<div class="contact-space px-3">
+    <h1 class="text-center">Contact</h1>
+    <form (submit)="onContact(signupForm)" #signupForm="ngForm" class="col-12 justify-content-center m-0 w-100">
+        <div class="row">
+            <div class="col-12 d-flex mb-4">
+                <!-- Email -->
+                <div class="form-group email col-8 px-2">
+                    <label for="email"></label>
+                    <input type="email" class="form-control" placeholder="E-mail" name="email" autocomplete="off"
+                        ngModel required email #email="ngModel">
+                    <!-- Error -->
+                    <span *ngIf="false" class="text-danger">Please enter a valid email</span>
+                </div>
+                <!-- Object -->
+                <div class="form-group object col-4 px-2">
+                    <label for="object"></label>
+                    <input type="text" class="form-control" placeholder="Object" name="object" autocomplete="off"
+                        ngModel required pattern="[A-Za-z\d\.]{3,10}" minlength="3" #object="ngModel">
+                    <!-- Error -->
+                    <span *ngIf="false" class="text-danger">Please enter a object</span>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group message px-2 mb-4">
+                    <textarea class="form-control" name="content" id="content" cols="30" rows="10"
+                        placeholder="Your message..."></textarea>
+                </div>
+            </div>
+            <!-- Submit -->
+            <div class="row submitBtn pe-0">
+                <div class="form-group pe-1">
+                    <div class="text-end mb-3">
+                        <button class="btn btn-primary col-2 py-2 text-white" type="submit" disabled>Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

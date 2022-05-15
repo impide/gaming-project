@@ -1,0 +1,13 @@
+// Main Project
+.main-project {
+    background: linear-gradient(90deg, #060F1E 0%, #14222F 73.23%, #132332 100%);
+
+    .header {
+        .main-side-container {
+            position: fixed;
+            z-index: 999;
+        }
+    }
+
+    .main-page {overflow-x: hidden;}
+}
