@@ -14,10 +14,8 @@ module.exports = {
             const newUser = new User({
                 username: req.body.username,
                 email: req.body.email,
-                password: hash,
-                avatar: req.body.avatar
+                password: hash
             })
-            console.log(newUser);
             newUser.save((err, user) => {
                 if (err) {
                     return res.status(400).json({

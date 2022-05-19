@@ -16,11 +16,10 @@ export class MainNavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onRegister() {
+  onRegister(): void {
     this.dialog.open(MainRegisterComponent, {
       panelClass: ['col-12', 'col-sm-8', 'col-md-6', 'col-lg-5', 'col-xl-4', 'col-xxl-4', 'animate__animated', 'animate__slideInUp'],
       disableClose: true
     })
   }
-
 }

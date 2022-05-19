@@ -16,7 +16,7 @@
     </div>
     <!-- Top Games -->
     <div class="top-games d-flex my-5">
-        <div class="card mx-2" routerLink="main-games" *ngFor="let game of games">
+        <div class="card mx-2" [routerLink]="game.routerLink" *ngFor="let game of games">
             <h3 class="gameTitle text-white p-2">{{game.gameTitle}}</h3>
             <img class="w-100 h-100" [src]="game.pathImages" alt="Cover">
         </div>
@@ -57,8 +57,9 @@
 
 <!-- [Video Space] -->
 <div class="video-space">
-    <h1 class="ps-3">Lorem ipsum dolor sit<br> amet, consectetur<br> adipiscing elit ut<br> aliquam</h1>
-    <img class="backgroundCover" src="../../../assets/images/main-space/VideoBackground.png" alt="Background">
+    <h1 class="ps-3">Join our community <br>so we can grow together<br>and build the first reference<br> games website
+    </h1>
+    <img class="backgroundCover w-100" src="../../../assets/images/main-space/VideoBackground.png" alt="Background">
     <!-- Video Card -->
     <div class="video-card d-flex">
         <div class="preview h-100">

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -8,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgxStarRatingModule } from 'ngx-star-rating';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AppComponent } from './app.component';
 import { MainSpaceComponent } from './components/main-space/main-space.component';
@@ -36,12 +38,14 @@ import { MainGamesComponent } from './components/main-games/main-games.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
     MatCheckboxModule,
-    NgxStarRatingModule
+    NgxStarRatingModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
